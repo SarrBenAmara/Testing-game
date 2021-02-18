@@ -29,6 +29,21 @@ gdjs.TestCode.GDSkyObjects3= [];
 gdjs.TestCode.GDCloudsObjects1= [];
 gdjs.TestCode.GDCloudsObjects2= [];
 gdjs.TestCode.GDCloudsObjects3= [];
+gdjs.TestCode.GDLeftbottonObjects1= [];
+gdjs.TestCode.GDLeftbottonObjects2= [];
+gdjs.TestCode.GDLeftbottonObjects3= [];
+gdjs.TestCode.GDRightBottonObjects1= [];
+gdjs.TestCode.GDRightBottonObjects2= [];
+gdjs.TestCode.GDRightBottonObjects3= [];
+gdjs.TestCode.GDUpBottonObjects1= [];
+gdjs.TestCode.GDUpBottonObjects2= [];
+gdjs.TestCode.GDUpBottonObjects3= [];
+gdjs.TestCode.GDDownBottonObjects1= [];
+gdjs.TestCode.GDDownBottonObjects2= [];
+gdjs.TestCode.GDDownBottonObjects3= [];
+gdjs.TestCode.GDJumpBottonObjects1= [];
+gdjs.TestCode.GDJumpBottonObjects2= [];
+gdjs.TestCode.GDJumpBottonObjects3= [];
 
 gdjs.TestCode.conditionTrue_0 = {val:false};
 gdjs.TestCode.condition0IsTrue_0 = {val:false};
@@ -193,9 +208,128 @@ gdjs.TestCode.condition0IsTrue_0.val = gdjs.evtTools.object.hitBoxesCollisionTes
 }
 
 
-};gdjs.TestCode.eventsList3 = function(runtimeScene) {
+};gdjs.TestCode.mapOfGDgdjs_46TestCode_46GDPlayerObjects1Objects = Hashtable.newFrom({"Player": gdjs.TestCode.GDPlayerObjects1});gdjs.TestCode.mapOfGDgdjs_46TestCode_46GDdooraObjects1Objects = Hashtable.newFrom({"doora": gdjs.TestCode.GDdooraObjects1});gdjs.TestCode.eventsList3 = function(runtimeScene) {
 
-};gdjs.TestCode.mapOfGDgdjs_46TestCode_46GDPlayerObjects1Objects = Hashtable.newFrom({"Player": gdjs.TestCode.GDPlayerObjects1});gdjs.TestCode.mapOfGDgdjs_46TestCode_46GDdooraObjects1Objects = Hashtable.newFrom({"doora": gdjs.TestCode.GDdooraObjects1});gdjs.TestCode.eventsList4 = function(runtimeScene) {
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.TestCode.GDPlayerObjects1);
+gdjs.copyArray(runtimeScene.getObjects("doora"), gdjs.TestCode.GDdooraObjects1);
+
+gdjs.TestCode.condition0IsTrue_0.val = false;
+gdjs.TestCode.condition1IsTrue_0.val = false;
+{
+gdjs.TestCode.condition0IsTrue_0.val = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.TestCode.mapOfGDgdjs_46TestCode_46GDPlayerObjects1Objects, gdjs.TestCode.mapOfGDgdjs_46TestCode_46GDdooraObjects1Objects, false, runtimeScene, false);
+}if ( gdjs.TestCode.condition0IsTrue_0.val ) {
+{
+gdjs.TestCode.condition1IsTrue_0.val = gdjs.evtTools.common.getVariableNumber(runtimeScene.getGame().getVariables().getFromIndex(0)) == 10;
+}}
+if (gdjs.TestCode.condition1IsTrue_0.val) {
+{gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "MainMenu", false);
+}}
+
+}
+
+
+};gdjs.TestCode.mapOfGDgdjs_46TestCode_46GDRightBottonObjects2Objects = Hashtable.newFrom({"RightBotton": gdjs.TestCode.GDRightBottonObjects2});gdjs.TestCode.mapOfGDgdjs_46TestCode_46GDUpBottonObjects2Objects = Hashtable.newFrom({"UpBotton": gdjs.TestCode.GDUpBottonObjects2});gdjs.TestCode.mapOfGDgdjs_46TestCode_46GDLeftbottonObjects2Objects = Hashtable.newFrom({"Leftbotton": gdjs.TestCode.GDLeftbottonObjects2});gdjs.TestCode.mapOfGDgdjs_46TestCode_46GDDownBottonObjects2Objects = Hashtable.newFrom({"DownBotton": gdjs.TestCode.GDDownBottonObjects2});gdjs.TestCode.mapOfGDgdjs_46TestCode_46GDJumpBottonObjects1Objects = Hashtable.newFrom({"JumpBotton": gdjs.TestCode.GDJumpBottonObjects1});gdjs.TestCode.eventsList4 = function(runtimeScene) {
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("RightBotton"), gdjs.TestCode.GDRightBottonObjects2);
+
+gdjs.TestCode.condition0IsTrue_0.val = false;
+{
+gdjs.TestCode.condition0IsTrue_0.val = gdjs.evtTools.input.cursorOnObject(gdjs.TestCode.mapOfGDgdjs_46TestCode_46GDRightBottonObjects2Objects, runtimeScene, true, false);
+}if (gdjs.TestCode.condition0IsTrue_0.val) {
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.TestCode.GDPlayerObjects2);
+{for(var i = 0, len = gdjs.TestCode.GDPlayerObjects2.length ;i < len;++i) {
+    gdjs.TestCode.GDPlayerObjects2[i].getBehavior("PlatformerObject").simulateRightKey();
+}
+}{for(var i = 0, len = gdjs.TestCode.GDPlayerObjects2.length ;i < len;++i) {
+    gdjs.TestCode.GDPlayerObjects2[i].setAnimation(1);
+}
+}{for(var i = 0, len = gdjs.TestCode.GDPlayerObjects2.length ;i < len;++i) {
+    gdjs.TestCode.GDPlayerObjects2[i].flipX(false);
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("UpBotton"), gdjs.TestCode.GDUpBottonObjects2);
+
+gdjs.TestCode.condition0IsTrue_0.val = false;
+{
+gdjs.TestCode.condition0IsTrue_0.val = gdjs.evtTools.input.cursorOnObject(gdjs.TestCode.mapOfGDgdjs_46TestCode_46GDUpBottonObjects2Objects, runtimeScene, true, false);
+}if (gdjs.TestCode.condition0IsTrue_0.val) {
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.TestCode.GDPlayerObjects2);
+{for(var i = 0, len = gdjs.TestCode.GDPlayerObjects2.length ;i < len;++i) {
+    gdjs.TestCode.GDPlayerObjects2[i].getBehavior("PlatformerObject").simulateUpKey();
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Leftbotton"), gdjs.TestCode.GDLeftbottonObjects2);
+
+gdjs.TestCode.condition0IsTrue_0.val = false;
+{
+gdjs.TestCode.condition0IsTrue_0.val = gdjs.evtTools.input.cursorOnObject(gdjs.TestCode.mapOfGDgdjs_46TestCode_46GDLeftbottonObjects2Objects, runtimeScene, true, false);
+}if (gdjs.TestCode.condition0IsTrue_0.val) {
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.TestCode.GDPlayerObjects2);
+{for(var i = 0, len = gdjs.TestCode.GDPlayerObjects2.length ;i < len;++i) {
+    gdjs.TestCode.GDPlayerObjects2[i].getBehavior("PlatformerObject").simulateLeftKey();
+}
+}{for(var i = 0, len = gdjs.TestCode.GDPlayerObjects2.length ;i < len;++i) {
+    gdjs.TestCode.GDPlayerObjects2[i].setAnimation(1);
+}
+}{for(var i = 0, len = gdjs.TestCode.GDPlayerObjects2.length ;i < len;++i) {
+    gdjs.TestCode.GDPlayerObjects2[i].flipX(true);
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("DownBotton"), gdjs.TestCode.GDDownBottonObjects2);
+
+gdjs.TestCode.condition0IsTrue_0.val = false;
+{
+gdjs.TestCode.condition0IsTrue_0.val = gdjs.evtTools.input.cursorOnObject(gdjs.TestCode.mapOfGDgdjs_46TestCode_46GDDownBottonObjects2Objects, runtimeScene, true, false);
+}if (gdjs.TestCode.condition0IsTrue_0.val) {
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.TestCode.GDPlayerObjects2);
+{for(var i = 0, len = gdjs.TestCode.GDPlayerObjects2.length ;i < len;++i) {
+    gdjs.TestCode.GDPlayerObjects2[i].getBehavior("PlatformerObject").simulateDownKey();
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("JumpBotton"), gdjs.TestCode.GDJumpBottonObjects1);
+
+gdjs.TestCode.condition0IsTrue_0.val = false;
+{
+gdjs.TestCode.condition0IsTrue_0.val = gdjs.evtTools.input.cursorOnObject(gdjs.TestCode.mapOfGDgdjs_46TestCode_46GDJumpBottonObjects1Objects, runtimeScene, true, false);
+}if (gdjs.TestCode.condition0IsTrue_0.val) {
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.TestCode.GDPlayerObjects1);
+{for(var i = 0, len = gdjs.TestCode.GDPlayerObjects1.length ;i < len;++i) {
+    gdjs.TestCode.GDPlayerObjects1[i].getBehavior("PlatformerObject").simulateJumpKey();
+}
+}}
+
+}
+
+
+};gdjs.TestCode.eventsList5 = function(runtimeScene) {
 
 {
 
@@ -227,21 +361,8 @@ gdjs.TestCode.eventsList3(runtimeScene);
 
 {
 
-gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.TestCode.GDPlayerObjects1);
-gdjs.copyArray(runtimeScene.getObjects("doora"), gdjs.TestCode.GDdooraObjects1);
 
-gdjs.TestCode.condition0IsTrue_0.val = false;
-gdjs.TestCode.condition1IsTrue_0.val = false;
-{
-gdjs.TestCode.condition0IsTrue_0.val = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.TestCode.mapOfGDgdjs_46TestCode_46GDPlayerObjects1Objects, gdjs.TestCode.mapOfGDgdjs_46TestCode_46GDdooraObjects1Objects, false, runtimeScene, false);
-}if ( gdjs.TestCode.condition0IsTrue_0.val ) {
-{
-gdjs.TestCode.condition1IsTrue_0.val = gdjs.evtTools.common.getVariableNumber(runtimeScene.getGame().getVariables().getFromIndex(0)) == 10;
-}}
-if (gdjs.TestCode.condition1IsTrue_0.val) {
-{gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "MainMenu", false);
-}}
-
+gdjs.TestCode.eventsList4(runtimeScene);
 }
 
 
@@ -280,8 +401,23 @@ gdjs.TestCode.GDSkyObjects3.length = 0;
 gdjs.TestCode.GDCloudsObjects1.length = 0;
 gdjs.TestCode.GDCloudsObjects2.length = 0;
 gdjs.TestCode.GDCloudsObjects3.length = 0;
+gdjs.TestCode.GDLeftbottonObjects1.length = 0;
+gdjs.TestCode.GDLeftbottonObjects2.length = 0;
+gdjs.TestCode.GDLeftbottonObjects3.length = 0;
+gdjs.TestCode.GDRightBottonObjects1.length = 0;
+gdjs.TestCode.GDRightBottonObjects2.length = 0;
+gdjs.TestCode.GDRightBottonObjects3.length = 0;
+gdjs.TestCode.GDUpBottonObjects1.length = 0;
+gdjs.TestCode.GDUpBottonObjects2.length = 0;
+gdjs.TestCode.GDUpBottonObjects3.length = 0;
+gdjs.TestCode.GDDownBottonObjects1.length = 0;
+gdjs.TestCode.GDDownBottonObjects2.length = 0;
+gdjs.TestCode.GDDownBottonObjects3.length = 0;
+gdjs.TestCode.GDJumpBottonObjects1.length = 0;
+gdjs.TestCode.GDJumpBottonObjects2.length = 0;
+gdjs.TestCode.GDJumpBottonObjects3.length = 0;
 
-gdjs.TestCode.eventsList4(runtimeScene);
+gdjs.TestCode.eventsList5(runtimeScene);
 return;
 
 }
